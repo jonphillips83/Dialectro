@@ -1,13 +1,24 @@
 # Kokoro running on GPU with CUDA 13.x
 
-Had to force download of GPU enabled pytorch-cu130 via pyproject.toml config
+## Installation 
+
+pyproject.toml will force download of GPU enabled pytorch-cu130 ~1.7gb
+
+```Powershell
+uv synv
+```
 
 ## Cpu fallback
 
+If no GPU is available Kokoro will fallback to CPU inference
+
 ## First Stage processing before passing audio stream to RVC for post processing
 
+Intention is for faster than realtime processing via kokoro before passing to RVC for second stage post processing. 
 
-## 1. 🇺🇸 American English (lang_code='a')
+## Pre-configured Voices
+
+### 1. 🇺🇸 American English (lang_code='a')
 Female Voices (af_)
 af_heart (Warm, natural, friendly) — The community favorite for general narration.
 
@@ -44,7 +55,7 @@ am_eric, am_echo, & am_onyx (Clear, rich, resonant studio styles)
 
 am_santa (Jolly, warm, festive) — A fun seasonal easter-egg voice.
 
-## 2. 🇬🇧 British English (lang_code='b')
+### 2. 🇬🇧 British English (lang_code='b')
 Female Voices (bf_)
 bf_emma (Refined, elegant, sophisticated) — Perfect for classical literature or high-end narration.
 
